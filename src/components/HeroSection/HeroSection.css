@@ -1,44 +1,36 @@
 
 /* HeroImg css */
 
-.mask{
-    width: 100%;
-    height: 100vh;
-    position: relative;
-}
-
-
-.into-img{
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    object-fit: cover;
-}
-
-.mask::after{
-    content: "";
-    width: 100%;
-    height:100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    /* background: rgb(16, 136, 132); */
-    background-color: black;
-    opacity: 0.8;
-}
 
 .hero{
     height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+   }
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
     width: 100%;
+    text-align: center;
 }
 
-.hero .content{
+.content:after{
+    content: "";
+    height: 100%;
+    width: inherit;
+    background-color: rgba(0, 0, 0, 0.627);
     position: absolute;
-    transform: translate(-50%, -50%);
-    top:50%;
-    left: 50%;
-    text-align: center;
+    z-index: 0;
+}
+
+.content-ct{
+    z-index: 1;
 }
 
 .hero .content h1{
@@ -72,7 +64,7 @@
 /* ------------------------------------------------------------------------------------------------------- */
 
 
-/* HeroImg css */
+/* HeroImg 2 css */
 
 
 .hero-img{

@@ -9,43 +9,46 @@ const Navbar = () => {
   const changeColor = () => {
     if (window.scrollY >= 100) {
       setColor(true);
-    }
-    else {
+    } else {
       setColor(false);
     }
   };
 
   window.addEventListener("scroll", changeColor);
-    return (
-      <div className={color ? "header header-bg" : "header"}>
-        <a href="/">
-          <h1>portfolio</h1>
-        </a>
-        {/* yaha pe bhi if else condition lagegi , agar nav menu active hoga hrefh me nav as dikhana chaunga aur agar ye nhi hai hrefh fir me normal nav menu pe jana chaunga  */}
-        <ul className={click ? "nav-menu active" : "nav-menu"}>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/project">Project</a>
-          </li>
-          <li>
-            <a href="about/">About</a>
-          </li>
-          <li>
-            <a href="/contact">Contact</a>
-          </li>
-        </ul>
-        <div className="hamburger" onClick={handleClick}>
-          {/* /*agar mujhehamburger menu click hai hrefh ye close hojaye isme if else lagaye hai  */}
-          {click ? (
-            <FaTimes size={20} style={{ color: "#fff" }} />
-          ) : (
-            <FaBars size={20} style={{ color: "#fff" }} />
-          )}
+  return (
+    <div className={color ? "header-container header-bg" : "header-container"}>
+      <div className="header-row">
+        <div className="header">
+          <a href="/">
+            <h1>portfolio</h1>
+          </a>
+          {/* yaha pe bhi if else condition lagegi , agar nav menu active hoga hrefh me nav as dikhana chaunga aur agar ye nhi hai hrefh fir me normal nav menu pe jana chaunga  */}
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/project">Project</a>
+            </li>
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li>
+              <a href="/contact">Contact</a>
+            </li>
+          </ul>
+          <div className="hamburger" onClick={handleClick}>
+            {/* /*agar mujhehamburger menu click hai hrefh ye close hojaye isme if else lagaye hai  */}
+            {click ? (
+              <FaTimes size={20} style={{ color: "#fff" }} />
+            ) : (
+              <FaBars size={20} style={{ color: "#fff" }} />
+            )}
+          </div>
         </div>
       </div>
-    );
-  };
+    </div>
+  );
+};
 
-  export default Navbar;
+export default Navbar;
